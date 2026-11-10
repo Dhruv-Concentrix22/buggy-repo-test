@@ -14,6 +14,12 @@ def test_calculate_discount_zero():
 def test_calculate_discount_invalid_percent():
     with pytest.raises(ValueError):
         calculate_discount(100.0, 150.0)
+    with pytest.raises(ValueError):
+        calculate_discount(100.0, -10.0)
+
+
+def test_calculate_discount_full():
+    assert calculate_discount(100.0, 100.0) == 100.0
 
 
 def test_calculate_total_with_tax():

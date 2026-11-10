@@ -6,8 +6,7 @@ def calculate_discount(price: float, discount_percent: float) -> float:
     if discount_percent < 0 or discount_percent > 100:
         raise ValueError("Discount percentage must be between 0 and 100")
     
-    # BUG: Multiplying price by discount_percent directly instead of (discount_percent / 100)
-    discount_amount = price * discount_percent
+    discount_amount = price * (discount_percent / 100)
     return round(discount_amount, 2)
 
 
